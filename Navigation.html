@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>NAVIGATION</title>
+<style>
+body{
+background-image:URL("back.png");
+background-size:cover;
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-position:center;
+}
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+box-shadow:6px 6px 10px 6px rgba(0,0,0,0.3),
+			-6px -6px 10px 6px rgba(0,0,0,0.3);
+border-radius:10px;
+}
+.logo{
+font-size:20px;
+margin:20px;
+letter-spacing:2px;
+
+}
+.menu ul{
+display:flex;
+}
+.menu li{
+list-style:none;
+font-size:18px;
+letter-spacing:2px;
+}
+.menu li a{
+color:white;
+text-decoration:none;
+padding:10px;
+position:relative;
+display:block;
+
+}
+.menu ul li a::after{
+content:"";
+position:absolute;
+width:0;
+height:2px;
+background-color:white;
+left:0;
+bottom:2px;
+transition:width 0.5s ease-in-out;
+}
+.menu ul li a:hover::after{
+width:100%;
+}
+
+.toggle{
+font-size:25px;
+position:absolute;
+right:20px;
+top:25px;
+display:none;
+}
+
+@media (max-width:750px){
+.toggle{
+display:block;
+}
+.menu{
+display:none;
+width:100%;
+}
+.navbar{
+flex-direction:column;
+align-items:flex-start;
+}
+.menu ul{
+flex-direction:column;
+width:100%;
+}
+.menu ul li{
+text-align:center;
+}
+.menu.active{
+display:flex;
+}
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="logo">LOGO</div>
+<i class="fas fa-bars toggle"></i>
+<div class="menu">
+<ul>
+<li><a href="#">HOME</a></li>
+<li><a href="#">CONTACT</a></li>
+<li><a href="#">SERVICE</a></li>
+<li><a href="#">ABOUT</a></li>
+</ul>
+</div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+let toggle=document.querySelector(".toggle")
+let menu=document.querySelector(".menu")
+
+toggle.onclick=function(){
+menu.classList.toggle("active");
+}
+</script>
